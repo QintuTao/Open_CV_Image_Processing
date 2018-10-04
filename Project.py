@@ -29,7 +29,7 @@ print("User Mannual\n")
 print("===============================================================================")
 print("1.Press \"H\" to switch the image to hsv mode\n")
 print("2.Enter \"I\" to print basic image info \n")
-print("3.Press \"R\" key to rotate 90 degrees to left")
+print("3.Press \"R\" key to rotate 90 degrees to left\n")
 
 # tracking user input (in forms of Key_press)
 key = cv2.waitKey(0)
