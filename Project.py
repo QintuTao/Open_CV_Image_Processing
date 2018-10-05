@@ -26,10 +26,15 @@ cv2.imshow("processing window",img)
 
 #showing user guide
 print("User Mannual\n")
-print("===============================================================================")
-print("1.Press \"H\" to switch the image to hsv mode\n")
-print("2.Enter \"I\" to print basic image info \n")
-print("3.Press \"R\" key to rotate 90 degrees to left\n")
+print("=====================================================================================")
+print("1.Press \"H\" key to switch the image to hsv mode\n")
+print("2.Enter \"I\" key to print basic image info \n")
+print("3.Press \"R\" key key to rotate 90 degrees to left\n")
 
 # tracking user input (in forms of Key_press)
 key = cv2.waitKey(0)
+    #turn the image to hsv mode
+if key == ord("h"):
+
+    #basic info of image
+elif key == ord("i"):
