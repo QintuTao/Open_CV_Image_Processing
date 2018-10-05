@@ -31,22 +31,45 @@ print("1.Press \"H\" key to switch the image to hsv mode\n")
 print("2.Press \"I\" key to print basic image info \n")
 print("3.Press \"L\" key key to rotate 90 degrees to left\n")
 print("4.Press \"R\" key to filter red;\n Press \"B\" key to filter blue;\n Press")
+print("5.Press \"esc\" key to exit the program")
+
+#function areas
+#function that shows the resultant image
+def showResult(img):
+    cv2.imshow("result",img)
+    k = cv2.waitKey(0)
+    print("Press any key to exit")
+
+#function that stores the resultant image
+def storeResult(img):
+    cv2.imwrite("result.jpg",img)
+
+#get properties from image
+img_gray = cv2.imread(user_input,0)
+row,col = img_gray.shape
+
 
 # tracking user input (in forms of Key_press)
 key = cv2.waitKey(0)
     #turn the image to hsv mode
 if key == ord("h"):
-    im
+    cv2.destroyAllWindows()
+    hsv = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
+    showResult(hsv)
+    storeResult(hsv)
+
     #basic info of image
 elif key == ord("i"):
-    img_gray = cv2.imread(user_input,0)
-    row,col = img_gray.shape
+    cv2.destroyAllWindows()
     row,col,color = img.shape
     print("The size of the is {0} x {1} big".format(row,col))
+    showResult(img)
 
 
-#function that shows the resultant image
-def showResult(img):
-    cv2.imshow("result",img)
-    k = cv2.waitKey(0)
-    print("Press esc to exit")
+    #rotation of imgage
+elif key == ord("r"):
+    cv2.destroyAllWindows()
+    M = cv2.getRotationMatrix2D((row/2,col/2),90,1)
+    result = cv2.warpAffine(img,M,(row,col))
+    showResult(result)
+    storeResult(result)
