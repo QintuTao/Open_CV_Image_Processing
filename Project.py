@@ -66,10 +66,22 @@ elif key == ord("i"):
     showResult(img)
 
 
-    #rotation of imgage
-elif key == ord("r"):
+    #rotation of image
+elif key == ord("l"):
     cv2.destroyAllWindows()
     M = cv2.getRotationMatrix2D((row/2,col/2),90,1)
     result = cv2.warpAffine(img,M,(row,col))
     showResult(result)
     storeResult(result)
+
+
+    #filter blue color in the image
+elif key == ord("r"):
+    cv2.destroyAllWindows()
+    lower_blue = np.array([110,50,50])
+    upper_blue = np.array([120,255,255])
+    mask = cv2.inRange(hsv,lower_blue,upper_blue)
+    showResult(mask)
+    storeResult(mask)
+
+    #filter red color in the image
