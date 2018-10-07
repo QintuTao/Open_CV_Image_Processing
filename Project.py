@@ -114,3 +114,13 @@ elif key == ord("g"):
     mask = cv2.inRange(hsv,lower_green,upper_green)
     showResult(mask)
     storeResult(mask)
+
+    #filter purple color in the image
+elif key == ord("p"):
+    cv2.destroyAllWindows()
+    hsv = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
+    lower_purple = np.array([140,50,50])
+    upper_purple = np.array([160,255,255])
+    mask = cv2.inRange(hsv,lower_purple,upper_purple)
+    showResult(mask)
+    storeResult(mask)
