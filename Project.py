@@ -76,12 +76,31 @@ elif key == ord("l"):
 
 
     #filter blue color in the image
-elif key == ord("r"):
+elif key == ord("b"):
     cv2.destroyAllWindows()
+    hsv = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
     lower_blue = np.array([110,50,50])
     upper_blue = np.array([120,255,255])
     mask = cv2.inRange(hsv,lower_blue,upper_blue)
     showResult(mask)
     storeResult(mask)
 
-    #filter red color in the image
+    #filter blue color in the image
+elif key == ord("b"):
+    cv2.destroyAllWindows()
+    hsv = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
+    lower_blue = np.array([110,50,50])
+    upper_blue = np.array([120,255,255])
+    mask = cv2.inRange(hsv,lower_blue,upper_blue)
+    showResult(mask)
+    storeResult(mask)
+
+    #filter green color in the image
+elif key == ord("g"):
+    cv2.destroyAllWindows()
+    hsv = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
+    lower_blue = np.array([110,50,50])
+    upper_blue = np.array([120,255,255])
+    mask = cv2.inRange(hsv,lower_blue,upper_blue)
+    showResult(mask)
+    storeResult(mask)
