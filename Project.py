@@ -30,7 +30,7 @@ print("=========================================================================
 print("1.Press \"H\" key to switch the image to hsv mode\n")
 print("2.Press \"I\" key to print basic image info \n")
 print("3.Press \"L\" key key to rotate 90 degrees to left\n")
-print("4.Press \"R\" key to filter red;\n Press \"B\" key to filter blue;\n Press")
+print("4.Press \"R\" key to filter red;\n Press \"B\" key to filter blue;\n Press \"P\" key to filter purple;\n Press \"Y\" key to filter yellow;\n")
 print("5.Press \"esc\" key to exit the program")
 
 #function areas
@@ -79,8 +79,8 @@ elif key == ord("l"):
 elif key == ord("b"):
     cv2.destroyAllWindows()
     hsv = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
-    lower_blue = np.array([120,50,50])
-    upper_blue = np.array([150,255,255])
+    lower_blue = np.array([110,50,50])
+    upper_blue = np.array([130,255,255])
     mask = cv2.inRange(hsv,lower_blue,upper_blue)
     showResult(mask)
     storeResult(mask)
@@ -89,9 +89,19 @@ elif key == ord("b"):
 elif key == ord("r"):
     cv2.destroyAllWindows()
     hsv = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
-    lower_red = np.array([0,50,50])
-    upper_red = np.array([30,255,255])
+    lower_red = np.array([-10,50,50])
+    upper_red = np.array([10,255,255])
     mask = cv2.inRange(hsv,lower_red,upper_red)
+    showResult(mask)
+    storeResult(mask)
+
+    #filter yellow color in the image
+elif key == ord("y"):
+    cv2.destroyAllWindows()
+    hsv = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
+    lower_yellow = np.array([20,50,50])
+    upper_yellow = np.array([40,255,255])
+    mask = cv2.inRange(hsv,lower_yellow,upper_yellow)
     showResult(mask)
     storeResult(mask)
 
@@ -99,8 +109,8 @@ elif key == ord("r"):
 elif key == ord("g"):
     cv2.destroyAllWindows()
     hsv = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
-    lower_green = np.array([60,50,50])
-    upper_green = np.array([90,255,255])
+    lower_green = np.array([50,50,50])
+    upper_green = np.array([70,255,255])
     mask = cv2.inRange(hsv,lower_green,upper_green)
     showResult(mask)
     storeResult(mask)
