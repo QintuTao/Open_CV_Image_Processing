@@ -124,3 +124,6 @@ elif key == ord("p"):
     mask = cv2.inRange(hsv,lower_purple,upper_purple)
     showResult(mask)
     storeResult(mask)
+
+    #thanks for using
+print("Thank you for using this software!")
