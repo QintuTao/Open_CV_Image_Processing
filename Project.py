@@ -41,8 +41,8 @@ def showResult(img):
     print("Press any key to exit")
 
 #function that stores the resultant image
-def storeResult(img):
-    cv2.imwrite("result.jpg",img)
+def storeResult(img,saveKey):
+    cv2.imwrite("{0}.jpg".format(saveKey),img)
 
 #get properties from image
 img_gray = cv2.imread(user_input,0)
