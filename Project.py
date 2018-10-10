@@ -56,14 +56,14 @@ if key == ord("h"):
     cv2.destroyAllWindows()
     hsv = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
     showResult(hsv)
-    storeResult(hsv)
+    storeResult(hsv,"user-h")
 
     #basic info of image
 elif key == ord("i"):
     cv2.destroyAllWindows()
     row,col,color = img.shape
     print("The size of the is {0} x {1} big".format(row,col))
-    showResult(img)
+    showResult(img,"user-i")
 
 
     #rotation of image
@@ -72,7 +72,7 @@ elif key == ord("l"):
     M = cv2.getRotationMatrix2D((row/2,col/2),90,1)
     result = cv2.warpAffine(img,M,(row,col))
     showResult(result)
-    storeResult(result)
+    storeResult(result,"user-l")
 
 
     #filter blue color in the image
@@ -83,7 +83,7 @@ elif key == ord("b"):
     upper_blue = np.array([130,255,255])
     mask = cv2.inRange(hsv,lower_blue,upper_blue)
     showResult(mask)
-    storeResult(mask)
+    storeResult(mask,"user-b")
 
     #filter red color in the image
 elif key == ord("r"):
@@ -93,7 +93,7 @@ elif key == ord("r"):
     upper_red = np.array([10,255,255])
     mask = cv2.inRange(hsv,lower_red,upper_red)
     showResult(mask)
-    storeResult(mask)
+    storeResult(mask,"user-r")
 
     #filter yellow color in the image
 elif key == ord("y"):
@@ -103,7 +103,7 @@ elif key == ord("y"):
     upper_yellow = np.array([40,255,255])
     mask = cv2.inRange(hsv,lower_yellow,upper_yellow)
     showResult(mask)
-    storeResult(mask)
+    storeResult(mask,"user-y")
 
     #filter green color in the image
 elif key == ord("g"):
@@ -113,7 +113,7 @@ elif key == ord("g"):
     upper_green = np.array([70,255,255])
     mask = cv2.inRange(hsv,lower_green,upper_green)
     showResult(mask)
-    storeResult(mask)
+    storeResult(mask,"user-g")
 
     #filter purple color in the image
 elif key == ord("p"):
@@ -123,7 +123,7 @@ elif key == ord("p"):
     upper_purple = np.array([160,255,255])
     mask = cv2.inRange(hsv,lower_purple,upper_purple)
     showResult(mask)
-    storeResult(mask)
+    storeResult(mask,"user-p")
 
     #thanks for using
 print("Thank you for using this software!")
